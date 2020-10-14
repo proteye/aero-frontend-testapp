@@ -1,26 +1,26 @@
 import React, { useCallback } from 'react';
 import useSelectorMap from '@utils/hooks/use-selector-map';
-// import { DatePicker } from 'antd';
+
+import './style.less';
 
 function ProductList() {
-  const select = useSelectorMap(state => ({
-    items: state.products.items,
-    wait: state.products.wait,
+  const select = useSelectorMap(({ products }) => ({
+    items: products.items,
+    wait: products.wait,
+    errors: products.errors,
   }));
 
-  if (select.wait) {
-    return <div>{select.wait && <i>Загрузка...</i>}</div>;
-  } else {
-    return (
-      <ul>
-        {select.items.map(item => (
-          <li key={item._id}>
-            {item.title} | {item.maidIn.title} | {item.category.title} | {item.price} руб
-          </li>
-        ))}
-      </ul>
-    );
-  }
+  // if (select.wait) {
+  //   return <div></div>;
+  // }
+
+  return (
+    <ul>
+      {select.items.map(item => (
+        <li key={item.id}>{item.title}</li>
+      ))}
+    </ul>
+  );
 }
 
 export default React.memo(ProductList);

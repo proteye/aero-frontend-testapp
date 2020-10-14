@@ -91,7 +91,7 @@ let config = {
         ],
       },
       {
-        test: /\.(svg|png|swf|jpg|otf|eot|ttf|woff|woff2)(\?.*)?$/,
+        test: /\.(svg|gif|png|swf|jpg|otf|eot|ttf|woff|woff2)(\?.*)?$/,
         use: [{ loader: 'url-loader', options: { limit: 1000, name: 'assets/[hash].[ext]' } }],
       },
       {

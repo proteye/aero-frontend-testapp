@@ -1,16 +1,13 @@
 import React, { Fragment, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import loadable from '@loadable/component';
 import Modals from '@app/modals';
-import Loading from '@app/loading';
+import Main from '@app/main';
+import About from '@app/about';
+import NotFound from '@app/not-found';
 
 import '../theme/bootstrap.css';
 import '../theme/style.less';
-
-const Main = loadable(() => import('@app/main'), { fallback: <Loading /> });
-const About = loadable(() => import('@app/about'), { fallback: <Loading /> });
-const NotFound = loadable(() => import('@app/not-found'), { fallback: <Loading /> });
 
 function App() {
   useEffect(() => {

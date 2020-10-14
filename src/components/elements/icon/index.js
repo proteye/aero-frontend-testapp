@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import list from './images';
+import list from './img';
 
 class Icon extends Component {
   static propTypes = {

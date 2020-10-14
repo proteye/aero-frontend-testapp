@@ -3,9 +3,8 @@ export const types = {
 };
 
 export default {
-  data: {
-    login: '',
-    password: '123456',
+  params: {
+    manufacturer: {},
   },
   wait: false,
   errors: null,

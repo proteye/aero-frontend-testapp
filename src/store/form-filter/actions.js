@@ -1,32 +1,22 @@
 import store from '@store';
 import * as api from '@api';
-import session from '@store/session/actions';
+import products from '@store/products/actions';
 import initState, { types } from './state.js';
 
 export default {
-  /**
-   * Изменение полей формы
-   * @param data
-   */
-  change: data => {
+  change: params => {
     store.dispatch({
       type: types.SET,
-      payload: { data },
+      payload: { params },
     });
   },
 
-  /**
-   * Отправка формы в АПИ
-   * @param data
-   * @returns {Promise<*>}
-   */
   submit: async data => {
     store.dispatch({ type: types.SET, payload: { wait: true, errors: null } });
     try {
       const response = await api.users.login(data);
       const result = response.data.result;
-      // Установка и сохранение сессии
-      await session.save({ user: result.user, token: result.token });
+      await products.save({ user: result.user, token: result.token });
 
       store.dispatch({ type: types.SET, payload: initState });
       return result;
