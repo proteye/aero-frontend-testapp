@@ -7,17 +7,13 @@ import './style.less';
 function LayoutPage(props) {
   return (
     <div className={themes('LayoutPage', props.theme)}>
+      <div className="LayoutPage__header">{props.header}</div>
       <div className="container">
-        <div className="row">
-          <div className="LayoutPage__header col-lg-12">{props.header}</div>
-        </div>
         <div className="row">
           <div className="LayoutPage__content col-lg-12">{props.children}</div>
         </div>
-        <div className="row">
-          <div className="LayoutPage__footer col-lg-12">{props.footer}</div>
-        </div>
       </div>
+      <div className="LayoutPage__footer">{props.footer}</div>
     </div>
   );
 }

@@ -17,12 +17,9 @@ function Main() {
 
   return (
     <LayoutPage header={<HeaderContainer />}>
-      <h1>Главная страница</h1>
+      <h1>Home</h1>
       <p>
-        <Link to="/private">Раздел для авторизованных</Link>
-      </p>
-      <p>
-        <Button onClick={callbacks.showInfo}>Показать модалку</Button>
+        <Button onClick={callbacks.showInfo}>Show modal</Button>
       </p>
     </LayoutPage>
   );

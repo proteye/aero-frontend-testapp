@@ -5,6 +5,8 @@
     display: flex;
     justify-content: flex-start;
     list-style: none;
+    margin: 0;
+    padding: 0;
   }
 
   &__item {
@@ -16,6 +18,7 @@
 
     &_active {
       & a {
+        color: @yellow;
         font-weight: 700;
       }
     }
@@ -23,7 +26,12 @@
 
   &__link {
     font-size: 14px;
-    font-weight: 300;
-    color: @blue;
+    font-weight: 400;
+    color: @grayLight;
+
+    &:hover {
+      color: @yellow;
+      text-decoration: none;
+    }
   }
 }

@@ -24,7 +24,7 @@ class Logo extends Component {
 
     return (
       <Link className={themes('Logo', this.props.theme)} to={to} title={title}>
-        AERO
+        AERO FRONTEND
       </Link>
     );
   }

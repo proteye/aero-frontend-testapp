@@ -10,7 +10,6 @@ import '../theme/style.less';
 
 const Main = loadable(() => import('@app/main'), { fallback: <Loading /> });
 const About = loadable(() => import('@app/about'), { fallback: <Loading /> });
-const Catalog = loadable(() => import('@app/catalog'), { fallback: <Loading /> });
 const NotFound = loadable(() => import('@app/not-found'), { fallback: <Loading /> });
 
 function App() {
@@ -24,7 +23,6 @@ function App() {
       </Helmet>
       <Switch>
         <Route path="/" exact={true} component={Main} />
-        <Route path="/catalog" component={Catalog} />
         <Route path="/about" component={About} />
         <Route component={NotFound} />
       </Switch>

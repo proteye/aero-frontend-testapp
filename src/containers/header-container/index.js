@@ -21,9 +21,8 @@ class HeaderContainer extends Component {
     this.state = {
       items: detectActive(
         [
-          { title: 'Главная', to: '/', active: false },
-          { title: 'О нас', to: '/about', active: false },
-          { title: 'Каталог', to: '/catalog', active: false },
+          { title: 'Home', to: '/', active: false },
+          { title: 'About', to: '/about', active: false },
         ],
         props.location,
       ),
