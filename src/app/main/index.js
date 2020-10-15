@@ -7,6 +7,8 @@ import products from '@store/products/actions';
 import useInit from '@utils/hooks/use-init';
 import useSelectorMap from '@utils/hooks/use-selector-map';
 
+import './style.less';
+
 function Main() {
   useInit(async () => {
     await products.fetchList();
@@ -26,8 +28,15 @@ function Main() {
   };
 
   return (
-    <LayoutPage header={<HeaderContainer />} loader={select.wait}>
-      <ProductList />
+    <LayoutPage theme="gray" header={<HeaderContainer />} loader={select.wait}>
+      <div className="Main">
+        <div className="row">
+          <div className="col-lg-9">
+            <ProductList />
+          </div>
+          <div className="col-lg-3">Filter</div>
+        </div>
+      </div>
     </LayoutPage>
   );
 }

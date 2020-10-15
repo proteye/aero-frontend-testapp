@@ -1,0 +1,53 @@
+@import '../../../theme/variables';
+
+.ProductItem {
+  display: block;
+  padding: 15px 20px;
+  margin: 5px;
+  font-size: 14px;
+  font-weight: normal;
+  color: #000000;
+  background-color: #ffffff;
+  border-radius: 5px;
+
+  &_hover,
+  &:hover {
+    text-decoration: none;
+    outline: none;
+  }
+
+  &_focus,
+  &:focus {
+    text-decoration: none;
+    outline: none;
+  }
+
+  &-top {
+    display: flex;
+    justify-content: space-between;
+
+    &__code {
+      color: @gray;
+      font-size: 12px;
+    }
+  }
+
+  &__photo {
+    text-align: center;
+    padding: 30px 0;
+  }
+
+  &__available {
+    color: @gray;
+    font-size: 14px;
+
+    &_true {
+      color: @green;
+
+      &:before {
+        content: '✔';
+        padding-right: 5px;
+      }
+    }
+  }
+}

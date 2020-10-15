@@ -2,6 +2,16 @@ import store from '@store';
 import * as api from '@api';
 import initState, { types } from './state.js';
 
+function prepareProducts(items) {
+  if (!items || !items.length) {
+    return [];
+  }
+
+  return items.map(item => {
+    return { ...item, price: 49999, bonuses: 490, stars: 3 };
+  });
+}
+
 const actions = {
   fetchList: async () => {
     store.dispatch({ type: types.SET, payload: { wait: true, errors: null } });
@@ -14,7 +24,7 @@ const actions = {
       store.dispatch({
         type: types.SET,
         payload: {
-          items: result.data.products || [],
+          items: prepareProducts(result.data.products),
           count: result.data.products ? result.data.products.length : 0,
           wait: false,
         },
@@ -81,7 +91,7 @@ const actions = {
       store.dispatch({
         type: types.SET,
         payload: {
-          items: result.data.products || [],
+          items: prepareProducts(result.data.products),
           count: result.data.products ? result.data.products.length : 0,
           wait: false,
         },
