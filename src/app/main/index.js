@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import modal from '@store/modal/actions';
 import LayoutPage from '@components/layouts/layout-page';
 import HeaderContainer from '@containers/header-container';
@@ -16,16 +16,24 @@ function Main() {
 
   const select = useSelectorMap(({ products }) => ({
     wait: products.wait,
+    errors: products.errors,
   }));
 
   const callbacks = {
-    showInfo: useCallback(async () => {
-      const result = await modal.open('info', {
+    showError: useCallback(async message => {
+      await modal.open('error', {
+        message,
         overflowTransparent: false,
         overflowClose: true,
       });
     }, []),
   };
+
+  useEffect(() => {
+    if (select.errors) {
+      callbacks.showError(select.errors);
+    }
+  }, [select.errors]);
 
   return (
     <LayoutPage theme="gray" header={<HeaderContainer />} loader={select.wait}>

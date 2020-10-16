@@ -43,10 +43,10 @@ const actions = {
   },
 
   favAdd: async id => {
-    store.dispatch({ type: types.SET, payload: { wait: true, errors: null } });
+    store.dispatch({ type: types.SET, payload: { favWait: true, errors: null } });
     try {
       const response =
-        id === 2 ? await api.products.favFailed({ id }) : await api.products.favSuccess({ id });
+        id === 1 ? await api.products.favFailed({ id }) : await api.products.favSuccess({ id });
       const result = response.data;
       if (result.status.includes('FAIL')) {
         throw result;
@@ -55,13 +55,13 @@ const actions = {
       store.dispatch({
         type: types.SET,
         payload: {
-          items: products.map(item => {
+          items: products.items.map(item => {
             if (item.id === id) {
               return { ...item, inFav: result.data.inFav };
             }
             return item;
           }),
-          wait: false,
+          favWait: false,
         },
       });
       return result;
@@ -69,7 +69,7 @@ const actions = {
       if (e.data && e.data.message) {
         store.dispatch({
           type: types.SET,
-          payload: { wait: false, errors: e.data.message },
+          payload: { favWait: false, errors: e.data.message },
         });
       } else {
         throw e;

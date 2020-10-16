@@ -62,8 +62,9 @@ function ProductItem(props) {
         </div>
         <div className="ProductItem-actions__more">
           <Button
-            icon={<Icon name="favorite" filled={false} />}
+            icon={<Icon name={product.inFav ? 'favoriteActive' : 'favorite'} />}
             theme="icon"
+            disabled={props.favWait}
             onClick={callbacks.onFavorite}
           />
           <Button icon={<Icon name="comparison" />} theme="icon" onClick={callbacks.onComparison} />
@@ -75,13 +76,15 @@ function ProductItem(props) {
 
 ProductItem.propTypes = {
   product: PropTypes.object.isRequired,
+  favWait: PropTypes.bool,
   onBuy: PropTypes.func,
   onFavorite: PropTypes.func,
   onComparison: PropTypes.func,
 };
 
 ProductItem.defaultProps = {
-  product: null,
+  product: {},
+  favWait: false,
 };
 
 export default React.memo(ProductItem);

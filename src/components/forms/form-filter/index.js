@@ -1,19 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import themes from '@utils/themes';
-import LayoutField from '@components/layouts/layout-field';
-import Input from '@components/elements/input';
-import Error from '@components/elements/error';
-import Button from '@components/elements/button';
 
 import './style.less';
 
-class FormLogin extends Component {
+class FormFilter extends Component {
   static propTypes = {
-    data: PropTypes.shape({
-      login: PropTypes.string.isRequired,
-      password: PropTypes.string.isRequired,
-    }).isRequired,
+    data: PropTypes.object.isRequired,
     errors: PropTypes.any,
     wait: PropTypes.bool,
     onChange: PropTypes.func,
@@ -44,31 +36,8 @@ class FormLogin extends Component {
   render() {
     const { data, errors, wait, theme } = this.props;
 
-    return (
-      <form className={themes('FormLogin', theme)} onSubmit={this.onSubmit}>
-        <LayoutField
-          label={'Логин'}
-          input={<Input type="text" value={data.login} onChange={this.onChange('login')} />}
-          error={<Error errors={errors} path={'login'} />}
-        />
-        <LayoutField
-          label={'Пароль'}
-          input={
-            <Input type="password" value={data.password} onChange={this.onChange('password')} />
-          }
-          error={<Error errors={errors} path={'password'} />}
-        />
-        <LayoutField
-          input={
-            <Button type="submit" disabled={wait}>
-              Войти{wait && '...'}
-            </Button>
-          }
-          error={<Error errors={errors} path={''} />}
-        />
-      </form>
-    );
+    return <div></div>;
   }
 }
 
-export default FormLogin;
+export default FormFilter;

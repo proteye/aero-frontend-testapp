@@ -10,18 +10,18 @@ export default class Products extends Common {
   }
 
   favSuccess(data) {
-    return this.http.put(`${this.path}/FAVORITE_SUCCESS`, data);
+    return this.http.get(`${this.path}/FAVORITE_SUCCESS`);
   }
 
   favFailed(data) {
-    return this.http.put(`${this.path}/FAVORITE_FAIL`, data);
+    return this.http.get(`${this.path}/FAVORITE_FAIL`);
   }
 
   filterSuccess(data) {
-    return this.http.put(`${this.path}/FILTER_SUCCESS`, data);
+    return this.http.get(`${this.path}/FILTER_SUCCESS`);
   }
 
   filterFailed(data) {
-    return this.http.put(`${this.path}/FILTER_FAIL`, data);
+    return this.http.get(`${this.path}/FILTER_FAIL`);
   }
 }

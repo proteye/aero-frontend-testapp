@@ -12,7 +12,7 @@
     "build:analize": "cross-env NODE_ENV=production BUILD_ANALYZE=true webpack",
     "test": "jest",
     "test:eslint": "./node_modules/.bin/eslint ./",
-    "eslint:fix": "./node_modules/.bin/eslint --fix --ext .js,.jsx,.less ."
+    "eslint:fix": "./node_modules/.bin/eslint --fix --ext .js,.jsx ."
   },
   "private": false,
   "author": "Ramil Zaynetdinov",

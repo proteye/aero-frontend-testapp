@@ -6,5 +6,6 @@ export default {
   items: [],
   count: 0,
   wait: false,
+  favWait: false,
   errors: null,
 };
