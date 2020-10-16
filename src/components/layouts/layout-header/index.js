@@ -24,7 +24,7 @@ class LayoutHeader extends Component {
       <div className={themes('LayoutHeader', theme)}>
         <div className="container">
           <div className="row">
-            <div className="col-lg-12">
+            <div className="col-xs-12">
               <div className="LayoutHeader__wrap">
                 <div className="LayoutHeader__left">{left}</div>
                 <div className="LayoutHeader__center">{children || center}</div>

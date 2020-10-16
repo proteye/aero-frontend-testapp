@@ -31,10 +31,10 @@ function Main() {
     <LayoutPage theme="gray" header={<HeaderContainer />} loader={select.wait}>
       <div className="Main">
         <div className="row">
-          <div className="col-lg-9">
+          <div className="col-xs-9">
             <ProductList />
           </div>
-          <div className="col-lg-3">Filter</div>
+          <div className="col-xs-3">Filter</div>
         </div>
       </div>
     </LayoutPage>

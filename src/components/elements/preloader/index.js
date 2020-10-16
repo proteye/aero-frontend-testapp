@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import preloaderImg from './img/preloader.gif';
+import preloaderImg from './img/preloader.svg';
 
 import './style.less';
 

@@ -11,7 +11,7 @@ function LayoutPage(props) {
       <div className="LayoutPage__header">{props.header}</div>
       <div className="container">
         <div className="row">
-          <div className="col-lg-12 LayoutPage__content">{props.children}</div>
+          <div className="col-xs-12 LayoutPage__content">{props.children}</div>
         </div>
       </div>
       <div className="LayoutPage__footer">{props.footer}</div>

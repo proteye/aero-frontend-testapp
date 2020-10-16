@@ -1,39 +1,28 @@
 import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
+import Button from '@components/elements/button';
+import Icon from '@components/elements/icon';
 
 import defaultImage from '@theme/img/image.jpg';
 
 import './style.less';
-import Button from '@components/elements/button';
+import favorite from '@components/elements/icon/img/favourite-active.svg';
 
 function ProductItem(props) {
-  console.log('props', props.product);
   const { product } = props;
   const _id = product.id;
 
   const callbacks = {
-    onBuy: useCallback(
-      e => {
-        e.preventDefault();
-        props.onBuy && props.onBuy(_id);
-      },
-      [props.onBuy],
-    ),
-    onFavorite: useCallback(
-      e => {
-        e.preventDefault();
-        props.onFavorite && props.onFavorite(_id);
-      },
-      [props.onFavorite],
-    ),
-    onComparison: useCallback(
-      e => {
-        e.preventDefault();
-        props.onComparison && props.onComparison(_id);
-      },
-      [props.onComparison],
-    ),
+    onBuy: useCallback(() => {
+      props.onBuy && props.onBuy(_id);
+    }, [props.onBuy]),
+    onFavorite: useCallback(() => {
+      props.onFavorite && props.onFavorite(_id);
+    }, [props.onFavorite]),
+    onComparison: useCallback(() => {
+      props.onComparison && props.onComparison(_id);
+    }, [props.onComparison]),
   };
 
   return (
@@ -67,11 +56,17 @@ function ProductItem(props) {
       <div className="ProductItem__bonuses">+{product.bonuses} бонусов</div>
       <div className="ProductItem-actions">
         <div className="ProductItem-actions__buy">
-          <Button onClick={callbacks.onBuy}>Купить</Button>
+          <Button icon={<Icon name="cart" />} theme="blue" onClick={callbacks.onBuy}>
+            Купить
+          </Button>
         </div>
         <div className="ProductItem-actions__more">
-          <Button onClick={callbacks.onFavorite}>fav</Button>
-          <Button onClick={callbacks.onComparison}>comp</Button>
+          <Button
+            icon={<Icon name="favorite" filled={false} />}
+            theme="icon"
+            onClick={callbacks.onFavorite}
+          />
+          <Button icon={<Icon name="comparison" />} theme="icon" onClick={callbacks.onComparison} />
         </div>
       </div>
     </div>

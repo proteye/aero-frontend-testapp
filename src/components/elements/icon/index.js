@@ -19,9 +19,7 @@ class Icon extends Component {
       throw new Error(`Icon not found ${name}`);
     }
 
-    const Element = list[name];
-
-    return <Element className={className} {...rest} />;
+    return <img className={className} src={list[name]} {...rest} />;
   }
 }
 

@@ -19,12 +19,12 @@ function ProductList() {
     <div className="ProductList">
       <div className="row-no-gutters ProductList__row">
         {select.items.map(item => (
-          <div className="col-lg-4" key={item.id}>
+          <div className="col-xs-4" key={item.id}>
             <ProductItem product={item} />
           </div>
         ))}
         {select.items.map(item => (
-          <div className="col-lg-4" key={item.id}>
+          <div className="col-xs-4" key={item.id}>
             <ProductItem product={item} />
           </div>
         ))}

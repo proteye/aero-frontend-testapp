@@ -25,6 +25,7 @@ function Button(props) {
       onClick={callbacks.onClick}
       disabled={props.disabled}
     >
+      {props.icon}
       {props.children}
     </button>
   );
@@ -32,6 +33,7 @@ function Button(props) {
 
 Button.propTypes = {
   children: PropTypes.node,
+  icon: PropTypes.node,
   onClick: PropTypes.func,
   type: PropTypes.string,
   title: PropTypes.string,
