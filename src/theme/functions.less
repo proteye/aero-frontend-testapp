@@ -1,6 +1,11 @@
-@import './variables.less';
-
 /* Mixins */
+.font(@fontName; @urlName: @fontName; @weight: normal; @style: normal) {
+  font-family: '@{fontName}';
+  src: url('@theme/fonts/@{urlName}.ttf') format('truetype');
+  font-weight: @weight;
+  font-style: @style;
+}
+
 .flat() {
   border-color: transparent;
 }

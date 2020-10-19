@@ -5,8 +5,8 @@ import LayoutPage from '@components/layouts/layout-page';
 function About() {
   return (
     <LayoutPage header={<HeaderContainer />}>
-      <h1>О проекте</h1>
-      <p>Тестовое задание для AERO.</p>
+      <h1>About</h1>
+      <p>Frontend test application for AERO.</p>
     </LayoutPage>
   );
 }

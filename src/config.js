@@ -13,13 +13,13 @@ let config = {
   },
   api: {
     // Обычно хост на апи относительный и используется прокси для устранения CORS
-    baseURL: isWeb ? '' : 'http://front.example.com',
+    baseURL: isWeb ? '' : 'https://my-json-server.typicode.com',
     tokenHeader: 'X-Token',
 
     // Прокси на апи, если режим разработки или ssr без nginx
     proxy: {
-      '/api/**': {
-        target: 'http://front.example.com',
+      '/aero-frontend/**': {
+        target: 'https://my-json-server.typicode.com',
         secure: true,
         changeOrigin: true,
       },

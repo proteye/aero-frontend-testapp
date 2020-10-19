@@ -1,7 +1,38 @@
-html, body, #app {
+@import './functions.less';
+@import './variables.less';
+
+@font-face {
+  .font(@fontProximaNova, @fontPNRegular);
+}
+
+@font-face {
+  .font(@fontProximaNova; @fontPNLight; 300);
+}
+
+@font-face {
+  .font(@fontProximaNova; @fontPNSemiBold; 600);
+}
+
+html,
+body,
+#app {
   height: 100%;
   position: relative;
   padding: 0;
   margin: 0;
-  font: 16px/20px normal Arial, sans-serif;
+  font-family: @fontProximaNova, Arial, sans-serif;
+  font-weight: normal;
+  font-size: @baseFontSize;
+  line-height: @baseLineHeight;
+}
+
+/* Disable responsive */
+.container {
+  width: 1170px !important;
+  max-width: none !important;
+}
+
+p {
+  font-size: 16px;
+  line-height: 20px;
 }

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import cn from 'classnames';
 import { Link } from 'react-router-dom';
 import themes from '@utils/themes';
 
@@ -24,7 +23,7 @@ class Logo extends Component {
 
     return (
       <Link className={themes('Logo', this.props.theme)} to={to} title={title}>
-        AERO
+        AERO FRONTEND
       </Link>
     );
   }

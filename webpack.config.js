@@ -15,11 +15,15 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+// eslint-disable-next-line no-unused-vars
 const TerserJSPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+// eslint-disable-next-line no-unused-vars
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+// eslint-disable-next-line no-unused-vars
 const nodeExternals = require('webpack-node-externals');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
+// eslint-disable-next-line no-unused-vars
 const CopyPlugin = require('copy-webpack-plugin');
 
 // For SSR
@@ -91,7 +95,7 @@ let config = {
         ],
       },
       {
-        test: /\.(svg|png|swf|jpg|otf|eot|ttf|woff|woff2)(\?.*)?$/,
+        test: /\.(svg|gif|png|swf|jpg|otf|eot|ttf|woff|woff2)(\?.*)?$/,
         use: [{ loader: 'url-loader', options: { limit: 1000, name: 'assets/[hash].[ext]' } }],
       },
       {

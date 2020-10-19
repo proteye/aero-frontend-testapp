@@ -1,5 +1,3 @@
-import params from '@utils/query-params';
-
 export default class Ssr {
   /**
    * @param http {AxiosInstance} Экземпляр библиотеки axios

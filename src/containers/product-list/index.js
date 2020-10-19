@@ -1,26 +1,45 @@
 import React, { useCallback } from 'react';
 import useSelectorMap from '@utils/hooks/use-selector-map';
-// import { DatePicker } from 'antd';
+import products from '@store/products/actions';
+import ProductItem from '@components/elements/product-item';
+
+import './style.less';
 
 function ProductList() {
-  const select = useSelectorMap(state => ({
-    items: state.products.items,
-    wait: state.products.wait,
+  const select = useSelectorMap(({ products }) => ({
+    items: products.items,
+    favWait: products.favWait,
   }));
 
-  if (select.wait) {
-    return <div>{select.wait && <i>Загрузка...</i>}</div>;
-  } else {
-    return (
-      <ul>
+  const callbacks = {
+    onBuy: useCallback(id => {
+      console.log('Buy', `{id: ${id}}`);
+    }, []),
+    onFavorite: useCallback(id => {
+      products.favAdd(id);
+    }, []),
+    onComparison: useCallback(id => {
+      console.log('Comparison', `{id: ${id}}`);
+    }, []),
+  };
+
+  return (
+    <div className="ProductList">
+      <div className="row-no-gutters ProductList__row">
         {select.items.map(item => (
-          <li key={item._id}>
-            {item.title} | {item.maidIn.title} | {item.category.title} | {item.price} руб
-          </li>
+          <div className="col-xs-4" key={item.id}>
+            <ProductItem
+              product={item}
+              favWait={select.favWait}
+              onBuy={callbacks.onBuy}
+              onFavorite={callbacks.onFavorite}
+              onComparison={callbacks.onComparison}
+            />
+          </div>
         ))}
-      </ul>
-    );
-  }
+      </div>
+    </div>
+  );
 }
 
 export default React.memo(ProductList);

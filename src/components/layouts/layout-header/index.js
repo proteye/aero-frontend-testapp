@@ -22,10 +22,16 @@ class LayoutHeader extends Component {
 
     return (
       <div className={themes('LayoutHeader', theme)}>
-        <div className="LayoutHeader__wrap">
-          <div className="LayoutHeader__left">{left}</div>
-          <div className="LayoutHeader__center">{children || center}</div>
-          <div className="LayoutHeader__right">{right}</div>
+        <div className="container">
+          <div className="row">
+            <div className="col-xs-12">
+              <div className="LayoutHeader__wrap">
+                <div className="LayoutHeader__left">{left}</div>
+                <div className="LayoutHeader__center">{children || center}</div>
+                <div className="LayoutHeader__right">{right}</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     );
