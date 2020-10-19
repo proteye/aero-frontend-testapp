@@ -81,7 +81,7 @@ const actions = {
     store.dispatch({ type: types.SET, payload: { wait: true, errors: null } });
     try {
       const response =
-        params.length === 1
+        params.manufacturers[1].value === true
           ? await api.products.filterFailed(params)
           : await api.products.filterSuccess(params);
       const result = response.data;

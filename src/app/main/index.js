@@ -3,6 +3,7 @@ import modal from '@store/modal/actions';
 import LayoutPage from '@components/layouts/layout-page';
 import HeaderContainer from '@containers/header-container';
 import ProductList from '@containers/product-list';
+import ProductFilter from '@containers/product-filter';
 import products from '@store/products/actions';
 import useInit from '@utils/hooks/use-init';
 import useSelectorMap from '@utils/hooks/use-selector-map';
@@ -38,11 +39,13 @@ function Main() {
   return (
     <LayoutPage theme="gray" header={<HeaderContainer />} loader={select.wait}>
       <div className="Main">
-        <div className="row">
+        <div className="row-no-gutters">
           <div className="col-xs-9">
             <ProductList />
           </div>
-          <div className="col-xs-3">Filter</div>
+          <div className="col-xs-3">
+            <ProductFilter />
+          </div>
         </div>
       </div>
     </LayoutPage>

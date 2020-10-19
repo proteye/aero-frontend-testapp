@@ -4,8 +4,15 @@ export const types = {
 
 export default {
   params: {
-    manufacturer: {},
+    manufacturers: [
+      { label: 'Canon', value: false },
+      { label: 'Fujifilm', value: false },
+      { label: 'Nikon', value: false },
+      { label: 'Panasonic', value: false },
+      { label: 'Leica', value: false },
+      { label: 'Olympus', value: false },
+      { label: 'Pentax', value: false },
+      { label: 'Zenit', value: false },
+    ],
   },
-  wait: false,
-  errors: null,
 };

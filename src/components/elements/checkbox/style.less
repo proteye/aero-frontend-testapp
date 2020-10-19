@@ -1,0 +1,36 @@
+@import '../../../theme/variables';
+
+.Checkbox {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: 300;
+  margin-bottom: 10px;
+
+  &__wrap {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    vertical-align: middle;
+    word-wrap: break-word;
+  }
+
+  &__input {
+    background: transparent;
+  }
+
+  &__label {
+    margin-left: 5px;
+  }
+
+  &_theme {
+    &_gray {
+      color: @gray;
+    }
+
+    &_align-top {
+      .Checkbox__wrap {
+        align-items: start;
+      }
+    }
+  }
+}
