@@ -1,6 +1,6 @@
 import store from '@store';
 import * as api from '@api';
-import initState, { types } from './state.js';
+import { types } from './state.js';
 
 function prepareProducts(items) {
   if (!items || !items.length) {

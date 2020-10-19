@@ -7,7 +7,6 @@ import Icon from '@components/elements/icon';
 import defaultImage from '@theme/img/image.jpg';
 
 import './style.less';
-import favorite from '@components/elements/icon/img/favourite-active.svg';
 
 function ProductItem(props) {
   const { product } = props;

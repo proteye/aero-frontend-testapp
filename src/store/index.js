@@ -8,7 +8,9 @@ const store = {
   /**
    * Assign from store instance after init()
    */
+  // eslint-disable-next-line no-unused-vars
   dispatch: action => {},
+  // eslint-disable-next-line no-unused-vars
   subscribe: listener => {},
   getState: () => {},
 };
